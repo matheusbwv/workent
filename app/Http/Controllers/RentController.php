@@ -31,7 +31,7 @@ class RentController extends Controller
     {
         $validated = request()->validate([
             'rentStart' => 'required|date',
-            'rentEnd' => 'required|date|after:rentStart'
+            'rentEnd' => 'required|date'
         ]);
 
         $clientId = User::findOrFail(Auth::id())->client->id;
